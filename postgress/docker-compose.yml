@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+# volumes:
+#   postgres2:
+#     name: nest-db
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    # volumes:
+    #   - postgres2:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
